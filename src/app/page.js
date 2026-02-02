@@ -31,8 +31,8 @@ export default function Home() {
     setRedshift(Number(event.target.value));
   };
 
-  const getDistance = async () => {
-    const response = await fetch('/api/getDistance', {
+  const getPrediction = async () => {
+    const response = await fetch('/api/getPrediction', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ export default function Home() {
             </tr>
           </tbody>
         </table>
-        <button style={{ width: '100px' }} onClick={getDistance}>Predict</button>
+        <button style={{ width: '100px' }} onClick={getPrediction}>Predict</button>
         <div>According to these inputs, the constellation will be a {resultText}</div>
       </main>
     </div>
